@@ -3,10 +3,16 @@
 domains=(
 academic-calendar-staging.umn.edu
 academic-calendar.umn.edu
+apps.asr.umn.edu
+apps-test.asr.umn.edu
 assets-staging.asr.umn.edu
 assets.asr.umn.edu
+course-fees-staging.umn.edu
+course-fees.umn.edu
 courses-staging.umn.edu
 courses.umn.edu
+csds-staging.umn.edu.umn.edu
+csds.umn.edu.umn.edu
 faculty-roles-staging.umn.edu
 faculty-roles.umn.edu
 forseti-staging.umn.edu
@@ -23,6 +29,8 @@ scholarships-staging.umn.edu
 scholarships.umn.edu
 sdp-messages-staging.umn.edu
 sdp-messages.umn.edu
+sdp-staging.umn.edu
+sdp.umn.edu
 sessions-staging.umn.edu
 sessions.umn.edu
 student-athletes-stage.umn.edu
