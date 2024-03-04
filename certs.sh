@@ -11,8 +11,6 @@ course-fees-staging.umn.edu
 course-fees.umn.edu
 courses-staging.umn.edu
 courses.umn.edu
-csds-staging.umn.edu.umn.edu
-csds.umn.edu.umn.edu
 faculty-roles-staging.umn.edu
 faculty-roles.umn.edu
 forseti-staging.umn.edu
