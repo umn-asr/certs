@@ -41,8 +41,19 @@ wfg-dirsync-staging.asr.umn.edu
 wfg-dirsync.asr.umn.edu
 )
 
-for d in ${domains[@]}; do
-  echo $d
-  echo | openssl s_client -servername $d -connect $d:443 2>/dev/null | openssl x509 -noout -dates
-  printf "\n"
+thirty_days=$(date -j -v +30d +"%Y%m%d")
+
+echo "Starting check for certs expiring before $thirty_days"
+
+for d in "${domains[@]}"; do
+
+  date_string=$(echo | openssl s_client -servername "$d" -connect "$d":443 2>/dev/null | openssl x509 -noout -dates | grep "notAfter" | cut -d= -f2)
+  not_after_date=$(date -j -f "%b %d %T %Y %Z" "$date_string" +"%Y%m%d")
+
+  if [ $thirty_days -gt $not_after_date ]; then
+    echo "$d"
+    echo "$date_string"
+    echo "EXPIRING BEFORE $thirty_days"
+    printf "\n"
+  fi
 done
