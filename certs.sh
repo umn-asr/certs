@@ -15,8 +15,6 @@ faculty-roles-staging.umn.edu
 faculty-roles.umn.edu
 forseti-staging.umn.edu
 forseti.umn.edu
-gpacalc-staging.umn.edu
-gpacalc.umn.edu
 onestop-queue-staging.umn.edu
 onestop-queue.umn.edu
 our-stg.umn.edu
