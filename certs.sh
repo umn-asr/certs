@@ -43,6 +43,8 @@ thirty_days=$(date -j -v +30d +"%Y%m%d")
 
 echo "Starting check for certs expiring before $thirty_days"
 
+any_expiring=false
+
 for d in "${domains[@]}"; do
 
   date_string=$(echo | openssl s_client -servername "$d" -connect "$d":443 2>/dev/null | openssl x509 -noout -dates | grep "notAfter" | cut -d= -f2)
@@ -53,5 +55,11 @@ for d in "${domains[@]}"; do
     echo "$date_string"
     echo "EXPIRING BEFORE $thirty_days"
     printf "\n"
+    any_expiring=true
   fi
+
 done
+
+if [ "$any_expiring" = false ]; then
+  echo "No certs expiring before $thirty_days"
+fi
